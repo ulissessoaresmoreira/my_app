@@ -9,14 +9,18 @@ import {
 } from '@mui/material'
 
 import MenuIcon from '@mui/icons-material/Menu'
+import useStyles from './Header.style'
+//import { ClassNames } from '@emotion/react'
+
 
 const Header = () => {
-    
+    const classes = useStyles()
 
     return (
         
         <AppBar position="static">
-            <Toolbar>
+            <Toolbar className={classes.title}>
+                
             <IconButton
                 size="large"
                 edge="start"
@@ -29,7 +33,7 @@ const Header = () => {
             <Typography variant="h6" component="div" color="secondary" size="large" sx={{ flexGrow: 1 }}>
                 My App
             </Typography>                                  
-            <Button color="secondary" size="large">Login</Button>
+            <Button color="primary" size="large">Login</Button>
             </Toolbar>
         </AppBar>
         

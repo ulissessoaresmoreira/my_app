@@ -3,9 +3,11 @@ import { makeStyles } from '@material-ui/styles'
 
 const useStyles = makeStyles ({
     title:{
-        color: red,
+        background: '',
     }
 })
 
 
 export default useStyles
+
+

@@ -7,8 +7,11 @@ import {
 
 import TemplateDefault from './templates/Default'
 
-import Home from './pages/Home';
-//import Header from './partials/Header';
+import Home from './pages/Home'
+import About from './pages/About'
+import Customers from './pages/Customers'
+import Characters from './pages/Characters'
+
 
 
 const App = () => {
@@ -17,6 +20,15 @@ const App = () => {
       <TemplateDefault>
         <Router>
           <Switch>            
+            <Route path="/about">
+              <About />
+            </Route>
+            <Route path="/characters">
+              <Characters />
+            </Route>
+            <Route path="/customers">
+              <Customers />
+            </Route>
             <Route path="/">
               <Home />
             </Route>
