@@ -8,13 +8,15 @@ import CustomerCard from '../components/CustomerCard'
 const Customers = () => {
     const [customers, setCustomers] = useState([])
 
-   
+    useEffect(() => {
 
     axios.get('https://reqres.in/api/users')
     .then(response =>{
         const {data} = response.data
         setCustomers(data)
+        console.log(data)
     })
+},[])
 
 
 

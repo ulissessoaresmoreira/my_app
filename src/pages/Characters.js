@@ -5,17 +5,23 @@ import axios from 'axios'
 import CharactersCard from '../components/CharactersCard'
 
 
+
 const Characters = () => {
     const [characters, setCharacters] = useState([])
-
-    console.log(Characters)
-
-    fetch('https://rickandmortyapi.com/api/character')
-    .then(response => response.json())
-    .then(data => console.log(data))
-        
+    
     
 
+    useEffect(() => {
+
+    axios.get('https://rickandmortyapi.com/api/character')
+    .then(({data}) =>{
+        const {results} = data
+        console.log(results)
+        setCharacters(results)
+    })
+    
+            
+}, [setCharacters]) // O USEFFECT É EXECUTADO SEMPRE QUE O CONTEÚDO DESSE ARRAY MUDAR
 
 
 
@@ -30,7 +36,9 @@ const Characters = () => {
                         name = {character.name}
                         status = {character.status}
                         species = {character.species}
-                        avatar = {character.image}
+                        location = {character.location}
+                        image = {character.image}
+                        
                         />
 
                     ))
@@ -44,3 +52,4 @@ const Characters = () => {
 
 
 export default Characters
+
