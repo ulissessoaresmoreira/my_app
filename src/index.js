@@ -19,7 +19,7 @@ const theme = createTheme({
     },
     secondary: {
       main: yellow[400]
-    }
+    },
   },
 })
 

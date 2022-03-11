@@ -1,5 +1,6 @@
 import {useState} from 'react'
-import { makeStyles } from '@material-ui/styles' 
+import { makeStyles } from '@material-ui/styles'
+import classNames from 'classnames' 
 
 import Card from '@mui/material/Card'
 import CardHeader from '@mui/material/CardHeader'
@@ -13,7 +14,8 @@ import ShareIcon from '@mui/icons-material/Share'
 
 const useStyles = makeStyles ({
     root:{
-        maxWidth: 345,
+        maxWidth: 500,
+        minWidth: 300,
         background: 'linear-gradient(180deg, #3d5afe 30%, #ffea00 90%)',        
     }
 })
@@ -23,11 +25,12 @@ const CustomerCard = ({
   lastname,
   email,
   avatar,
+  className,
 }) => {
     const classes=useStyles()
 
   return (
-    <Card className={classes.root}>
+    <Card className={classNames(className, classes.root)}>
       <CardHeader
         avatar={
           <Avatar aria-label="recipe" src={avatar}>

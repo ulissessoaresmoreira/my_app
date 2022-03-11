@@ -2,11 +2,11 @@ import React from 'react'
 import {useState, useEffect} from 'react'
 import axios from 'axios'
 
-import CharactersCard from '../components/CharactersCard'
+import RickAndMortyCard from '../components/RickAndMortyCard'
 
 
 
-const Characters = () => {
+const RickAndMorty = () => {
     const [characters, setCharacters] = useState([])
     
     
@@ -28,11 +28,11 @@ const Characters = () => {
     return (
         
             <>                           
-                <h1>Characters</h1>
+                <h1>Characters Rick and Morty</h1>
                 {
                     characters.map(character => (
 
-                        <CharactersCard 
+                        <RickAndMortyCard 
                         name = {character.name}
                         status = {character.status}
                         species = {character.species}
@@ -51,5 +51,5 @@ const Characters = () => {
 
 
 
-export default Characters
+export default RickAndMorty
 

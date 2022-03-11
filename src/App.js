@@ -10,8 +10,8 @@ import TemplateDefault from './templates/Default'
 import Home from './pages/Home'
 import About from './pages/About'
 import Customers from './pages/Customers'
-import Characters from './pages/Characters'
-
+import RickAndMorty from './pages/RickAndMorty'
+import Marvel from './pages/Marvel'
 
 
 const App = () => {
@@ -23,8 +23,11 @@ const App = () => {
             <Route path="/about">
               <About />
             </Route>
-            <Route path="/characters">
-              <Characters />
+            <Route path="/marvel">
+              <Marvel />
+            </Route>
+            <Route path="/rickmorty">
+              <RickAndMorty />
             </Route>
             <Route path="/customers">
               <Customers />

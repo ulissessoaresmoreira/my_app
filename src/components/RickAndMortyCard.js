@@ -23,7 +23,7 @@ const useStyles = makeStyles ({
     }
 })
 
-const CharactersCard = ({
+const RickAndMortyCard = ({
   name,
   status,
   species,
@@ -68,4 +68,4 @@ const CharactersCard = ({
 }
 
 
-export default CharactersCard
+export default RickAndMortyCard
