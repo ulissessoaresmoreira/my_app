@@ -6,6 +6,7 @@ import {
 } from 'react-router-dom'
 
 import TemplateDefault from './templates/Default'
+import TemplatePage from './templates/TemplatePage'
 
 import Home from './pages/Home'
 import About from './pages/About'
@@ -17,27 +18,27 @@ import Marvel from './pages/Marvel'
 const App = () => {
   return (
     <>
-      <TemplateDefault>
-        <Router>
+        <TemplateDefault>
+      <Router>
           <Switch>            
             <Route path="/about">
-              <About />
+              <TemplatePage title="Sobre" Component={About} />
             </Route>
             <Route path="/marvel">
-              <Marvel />
+              <TemplatePage title="Characters Marvel" Component={Marvel} />
             </Route>
             <Route path="/rickmorty">
-              <RickAndMorty />
+              <TemplatePage title="Characters Rick and Morty" Component={RickAndMorty} />
             </Route>
             <Route path="/customers">
-              <Customers />
+              <TemplatePage title="Clientes" Component={Customers} />
             </Route>
             <Route path="/">
-              <Home />
+              <TemplatePage title="Página Inicial" Component={Home}/>
             </Route>
           </Switch>
-        </Router>
-      </TemplateDefault>
+      </Router>
+        </TemplateDefault>
 
 
     </>

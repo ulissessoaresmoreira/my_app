@@ -2,7 +2,6 @@ import Container from '@mui/material/Container'
 import { makeStyles } from '@material-ui/styles' 
 
 import Header from '../partials/Header'
-import { CenterFocusStrong } from '@mui/icons-material'
 
 
 

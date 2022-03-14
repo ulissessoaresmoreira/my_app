@@ -26,26 +26,19 @@ const RickAndMorty = () => {
 
 
     return (
-        
-            <>                           
-                <h1>Characters Rick and Morty</h1>
-                {
-                    characters.map(character => (
-
-                        <RickAndMortyCard 
-                        name = {character.name}
-                        status = {character.status}
-                        species = {character.species}
-                        location = {character.location}
-                        image = {character.image}
-                        
-                        />
-
-                    ))
-                }
-            </>
-            
-        
+        <>
+            {
+                characters.map(character => (
+                    <RickAndMortyCard 
+                    name = {character.name}
+                    status = {character.status}
+                    species = {character.species}
+                    location = {character.location}
+                    image = {character.image}
+                    />
+                ))
+            }
+        </>
     )
 }
 
