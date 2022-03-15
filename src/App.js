@@ -18,8 +18,8 @@ import Marvel from './pages/Marvel'
 const App = () => {
   return (
     <>
-        <TemplateDefault>
       <Router>
+        <TemplateDefault> 
           <Switch>            
             <Route path="/about">
               <TemplatePage title="Sobre" Component={About} />
@@ -37,8 +37,8 @@ const App = () => {
               <TemplatePage title="Página Inicial" Component={Home}/>
             </Route>
           </Switch>
-      </Router>
         </TemplateDefault>
+      </Router>
 
 
     </>

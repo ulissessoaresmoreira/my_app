@@ -25,7 +25,7 @@ import PsychologyIcon from '@mui/icons-material/Psychology'
 
 import useStyles from './Header.style'
 
-import { useHistory } from "react-router-dom";
+import { useHistory } from "react-router-dom"
 
 //import { ClassNames } from '@emotion/react'
 
@@ -38,15 +38,12 @@ const Header = () => {
 
 const [menuOpen, setMenuOpen] = useState(false)
 
-const handleToggle = () => {
-    if(menuOpen === true){
-        setMenuOpen(false)
-    } else {
-        setMenuOpen(true)
-    }
+const handleToggleMenu = () => {
+    setMenuOpen(!menuOpen)
 }
 
 const handleMenuClick = route => {
+    handleToggleMenu()
     history.push(route)
 }
 
@@ -60,7 +57,7 @@ const handleMenuClick = route => {
                         color="secondary"
                         aria-label="menu"
                         sx={{ mr: 2 }}
-                        onClick={() => handleToggle()}
+                        onClick={() => handleToggleMenu()}
                     >
                         <MenuIcon />
                     </IconButton>
@@ -70,7 +67,7 @@ const handleMenuClick = route => {
                     <Button color="primary" size="large">Login</Button>
                 </Toolbar>
             </AppBar>
-            <Drawer open={menuOpen} onClose={handleToggle}>
+            <Drawer open={menuOpen} onClose={handleToggleMenu}>
                 <List>
                     <ListItem button onClick={() => {handleMenuClick('/')}}>
                         <ListItemIcon><HomeIcon /></ListItemIcon>
