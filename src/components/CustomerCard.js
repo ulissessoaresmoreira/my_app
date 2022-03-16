@@ -8,8 +8,10 @@ import CardActions from '@mui/material/CardActions'
 import Avatar from '@mui/material/Avatar'
 import IconButton from '@mui/material/IconButton'
 
-import FavoriteIcon from '@mui/icons-material/Favorite'
-import ShareIcon from '@mui/icons-material/Share'
+import EditIcon from '@mui/icons-material/Edit'
+import DeleteIcon from '@mui/icons-material/Delete'
+
+import ModalConfirm from './ModalConfirm'
 
 
 const useStyles = makeStyles ({
@@ -29,29 +31,56 @@ const CustomerCard = ({
 }) => {
     const classes=useStyles()
 
+const [openModal, setOpenModal] = useState(false)
+const handleToggleOpenModal = () => {
+  setOpenModal(!openModal)
+}
+
+const handleConfirmModal = () => {
+  alert('ok')
+}
+
+const handleRemoveCustomer = () => {
+  handleToggleOpenModal()
+}
+
+const handleEditModal = () => {
+  handleToggleOpenModal()
+}
+
   return (
-    <Card className={classNames(className, classes.root)}>
-      <CardHeader
-        avatar={
-          <Avatar aria-label="recipe" src={avatar}>
-            R
-          </Avatar>
-        }        
-        title={`${name} ${lastname}`}
-        subheader={email}
+    <>
+        <Card className={classNames(className, classes.root)}>
+        <CardHeader
+          avatar={
+            <Avatar aria-label="recipe" src={avatar}>
+              R
+            </Avatar>
+          }        
+          title={`${name} ${lastname}`}
+          subheader={email}
+        />
+        
+        
+        <CardActions disableSpacing>
+          <IconButton aria-label="editar cadastro" onClick={handleEditModal}>
+            <EditIcon />
+          </IconButton>
+          <IconButton aria-label="remover cadastro" onClick={handleRemoveCustomer}>
+            <DeleteIcon />
+          </IconButton>
+        </CardActions>
+        
+      </Card>
+      <ModalConfirm
+        open={openModal}
+        onClose={handleToggleOpenModal}
+        onConfirm={handleConfirmModal}
+        title="Deseja realmente excluir este cadastro?"
+        message="Ao confirmar, esta ação não poderá ser desfeita."
+        
       />
-      
-      
-      <CardActions disableSpacing>
-        <IconButton aria-label="add to favorites">
-          <FavoriteIcon />
-        </IconButton>
-        <IconButton aria-label="share">
-          <ShareIcon />
-        </IconButton>
-      </CardActions>
-      
-    </Card>
+    </>
   )
 }
 
