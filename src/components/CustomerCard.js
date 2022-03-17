@@ -23,11 +23,13 @@ const useStyles = makeStyles ({
 })
 
 const CustomerCard = ({
+  id, // O ID É RECEBIDO PELO CUSTOMERS E ENVIADO PARA CÁ
   name,
   lastname,
   email,
   avatar,
   className,
+  onRemoveCustomer, // FUNÇÃO RECEBIDA COMO PROP, LEMBRAR QUE PRECISA SER CHAMADA POR OUTRA FUNÇÃO NESTE COMPONENTE
 }) => {
     const classes=useStyles()
 
@@ -36,8 +38,9 @@ const handleToggleOpenModal = () => {
   setOpenModal(!openModal)
 }
 
-const handleConfirmModal = () => {
-  alert('ok')
+const handleConfirmModal = (id) => { //onConfirm={() => handleConfirmModal(id)}(LINHA 81) RECEBEU O ID E PASSOU PARA CÁ
+  onRemoveCustomer(id)  
+  handleToggleOpenModal()
 }
 
 const handleRemoveCustomer = () => {
@@ -75,7 +78,7 @@ const handleEditModal = () => {
       <ModalConfirm
         open={openModal}
         onClose={handleToggleOpenModal}
-        onConfirm={handleConfirmModal}
+        onConfirm={() => handleConfirmModal(id)}
         title="Deseja realmente excluir este cadastro?"
         message="Ao confirmar, esta ação não poderá ser desfeita."
         
