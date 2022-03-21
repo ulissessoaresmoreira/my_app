@@ -18,9 +18,9 @@ const theme = createTheme({
       main: blue[500],
     },
     secondary: {
-      main: yellow[400]
+      main: yellow[400],
     },
-  },
+  },  
 })
 
 

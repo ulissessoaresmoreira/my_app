@@ -75,6 +75,10 @@ const handleMenuClick = route => {
                     </ListItem>
                     <ListItem button onClick={() => {handleMenuClick('/customers')}}>
                         <ListItemIcon><GroupAddIcon /></ListItemIcon>
+                        <ListItemText>Listagem de Clientes</ListItemText>
+                    </ListItem>
+                    <ListItem button onClick={() => {handleMenuClick('/customers/add')}}>
+                        <ListItemIcon><GroupAddIcon /></ListItemIcon>
                         <ListItemText>Cadastro de Clientes</ListItemText>
                     </ListItem>
                     <ListItem button onClick={() => {handleMenuClick('/rickmorty')}}>
@@ -85,7 +89,7 @@ const handleMenuClick = route => {
                         <ListItemIcon><TheaterComedyIcon /></ListItemIcon>
                         <ListItemText>Personagens Marvel</ListItemText>
                     </ListItem>
-                    <ListItem button>
+                    <ListItem button onClick={() => {handleMenuClick('/advice')}}>
                         <ListItemIcon><PsychologyIcon /></ListItemIcon>
                         <ListItemText>Frase do dia</ListItemText>
                     </ListItem>

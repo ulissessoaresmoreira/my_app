@@ -3,7 +3,7 @@ import {useState, useEffect} from 'react'
 import axios from 'axios'
 
 
-import CustomerCard from '../components/CustomerCard'
+import CustomerCard from '../../components/CustomerCard'
 import Grid from '@mui/material/Grid'
 
 import { makeStyles } from '@material-ui/styles'
@@ -20,7 +20,7 @@ const useStyles = makeStyles((theme) => ({
 }))
 
 
-const Customers = () => {
+const CustomersList = () => {
     const [customers, setCustomers] = useState([])
     const classes = useStyles()
 
@@ -36,7 +36,7 @@ const Customers = () => {
 
 const handleRemoveCustomer = (id) => {
     axios.delete(`https://reqres.in/api/users/${id}`) //OBS: PASSAR O ID PARA CÁ POR LITERAL STRING
-        .then(response => {
+        .then(() => {
             const newCustomersState = customers.filter(customer => customer.id !== id)
             setCustomers(newCustomersState)
         })
@@ -70,7 +70,7 @@ const handleRemoveCustomer = (id) => {
 
 
 
-export default Customers
+export default CustomersList
 
 
 // XS = EXTRA SMALL

@@ -10,9 +10,11 @@ import TemplatePage from './templates/TemplatePage'
 
 import Home from './pages/Home'
 import About from './pages/About'
-import Customers from './pages/Customers'
+import CustomersList from './pages/customers/List'
+import Register from './pages/customers/Register'
 import RickAndMorty from './pages/RickAndMorty'
 import Marvel from './pages/Marvel'
+import Advice from './pages/Advice'
 
 
 const App = () => {
@@ -24,14 +26,20 @@ const App = () => {
             <Route path="/about">
               <TemplatePage title="Sobre" Component={About} />
             </Route>
+            <Route path="/advice">
+              <TemplatePage title="Ask to Guru" Component={Advice} />
+            </Route>
             <Route path="/marvel">
               <TemplatePage title="Characters Marvel" Component={Marvel} />
             </Route>
             <Route path="/rickmorty">
               <TemplatePage title="Characters Rick and Morty" Component={RickAndMorty} />
             </Route>
+            <Route path="/customers/add">
+              <TemplatePage title="Registro de Clientes" Component={Register} />
+            </Route>
             <Route path="/customers">
-              <TemplatePage title="Clientes" Component={Customers} />
+              <TemplatePage title="Lista de Clientes" Component={CustomersList} />
             </Route>
             <Route path="/">
               <TemplatePage title="Página Inicial" Component={Home}/>

@@ -21,7 +21,7 @@ const RickAndMorty = () => {
     })
     
             
-}, [setCharacters]) // O USEFFECT É EXECUTADO SEMPRE QUE O CONTEÚDO DESSE ARRAY MUDAR
+}, []) // O USEFFECT É EXECUTADO SEMPRE QUE O CONTEÚDO DESSE ARRAY MUDAR
 
 
 
