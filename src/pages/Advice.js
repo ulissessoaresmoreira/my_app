@@ -13,25 +13,31 @@ const Advice = () => {
     useEffect (() =>{
 
         axios.get('https://api.adviceslip.com/advice')
-            .then((slip) => {
-                //const {slips} = advice
-                console.log(slip)
-                //setTips(conselho)
+            .then((response) => {
+                //const {gato} = response.data.slip.advice
+                //console.log(response.data.slip.advice)                
+                setTips(response.data.slip.advice)
+                console.log(tips)
             })
 
-    }, [setTips])
+    }, [tips])
 
 
     return (
         <>
             <h1> Advices </h1>
-            
-                    <AdviceCard 
-                            
-                    />               
-            
+            <AdviceCard 
+                tip = {tips}    
+            />
         </>
     )
 }
 
 export default Advice
+
+
+/*
+
+*/
+
+

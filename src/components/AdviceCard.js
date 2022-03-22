@@ -17,7 +17,7 @@ const useStyles = makeStyles ({
 })
 
 const AdviceCard = ({
-    dica,
+    tip,
   }) => {
     
 
@@ -28,7 +28,7 @@ return (
     <Card   className={classes.conteudo}>
       <CardContent>
         <Typography gutterBottom variant="h5" component="div">
-          {dica}
+          {tip}
         </Typography>
         
         
