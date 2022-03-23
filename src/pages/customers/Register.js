@@ -1,12 +1,11 @@
 import React from 'react'
-import {useState} from 'react'
-
 import axios from 'axios'
-
+import {useState} from 'react'
 import { makeStyles } from '@material-ui/styles' 
-import Button from '@mui/material/Button'
 
-import TextField from '@mui/material/TextField'
+import Toasty from '../../components/Toasty'
+import {Button, TextField} from '@mui/material'
+
 
 const useStyles = makeStyles ({
     wrapper:{       
@@ -29,6 +28,7 @@ const Register = () => {
         },
     })
 
+    const [openToasty, setOpenToasty] = useState (false) 
     
 
     const handleInputChange = (e) =>{
@@ -66,7 +66,7 @@ const Register = () => {
             }
         }
         if (hasError) {
-            setForm(newFormState)
+            return setForm(newFormState)
         }
 
         
@@ -75,7 +75,10 @@ const Register = () => {
             funcao: form.funcao.value,
         }).then((response) => {
             console.log('ok', response)
+            setOpenToasty(true)
         })
+
+        
         
     }
     
@@ -107,8 +110,9 @@ const Register = () => {
                 />
             </div>
             <div className={classes.wrapper}>
-                <Button variant="contained" onClick={handleRegisterButton} >Cadastrar</Button>
+                <Button variant="contained" onClick={handleRegisterButton}>Cadastrar</Button>
             </div>
+            <Toasty open={openToasty} severity="success" text="Cadastro Realizado com Sucesso!" />
         </>
     )
 }
