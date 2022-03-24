@@ -23,13 +23,14 @@ const useStyles = makeStyles ({
 })
 
 const CustomerCard = ({
-  id, // O ID É RECEBIDO PELO CUSTOMERS E ENVIADO PARA CÁ
+  id, // O ID É RECEBIDO PELO CUSTOMER.ID NA PAGE LIST E ENVIADO PARA CÁ
   name,
   lastname,
   email,
   avatar,
   className,
   onRemoveCustomer, // FUNÇÃO RECEBIDA COMO PROP, LEMBRAR QUE PRECISA SER CHAMADA POR OUTRA FUNÇÃO NESTE COMPONENTE
+  onEditCustomer,
 }) => {
     const classes=useStyles()
 
@@ -47,8 +48,8 @@ const handleRemoveCustomer = () => {
   handleToggleOpenModal()
 }
 
-const handleEditModal = () => {
-  handleToggleOpenModal()
+const handleEditCustomer = () => {
+  onEditCustomer(id)
 }
 
   return (
@@ -66,7 +67,7 @@ const handleEditModal = () => {
         
         
         <CardActions disableSpacing>
-          <IconButton aria-label="editar cadastro" onClick={handleEditModal}>
+          <IconButton aria-label="editar cadastro" onClick={() => handleEditCustomer(id)}>
             <EditIcon />
           </IconButton>
           <IconButton aria-label="remover cadastro" onClick={handleRemoveCustomer}>
@@ -80,8 +81,7 @@ const handleEditModal = () => {
         onClose={handleToggleOpenModal}
         onConfirm={() => handleConfirmModal(id)}
         title="Deseja realmente excluir este cadastro?"
-        message="Ao confirmar, esta ação não poderá ser desfeita."
-        
+        message="Ao confirmar, esta ação não poderá ser desfeita."        
       />
     </>
   )

@@ -11,6 +11,7 @@ import TemplatePage from './templates/TemplatePage'
 import Home from './pages/Home'
 import About from './pages/About'
 import CustomersList from './pages/customers/List'
+import CustomersEdit from './pages/customers/Edit'
 import Register from './pages/customers/Register'
 import RickAndMorty from './pages/RickAndMorty'
 import Marvel from './pages/Marvel'
@@ -34,6 +35,9 @@ const App = () => {
             </Route>
             <Route path="/rickmorty">
               <TemplatePage title="Characters Rick and Morty" Component={RickAndMorty} />
+            </Route>
+            <Route path="/customers/edit/:id">
+              <TemplatePage title="Editar Cliente" Component={CustomersEdit} />
             </Route>
             <Route path="/customers/add">
               <TemplatePage title="Registro de Clientes" Component={Register} />

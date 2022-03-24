@@ -81,6 +81,10 @@ const handleMenuClick = route => {
                         <ListItemIcon><GroupAddIcon /></ListItemIcon>
                         <ListItemText>Cadastro de Clientes</ListItemText>
                     </ListItem>
+                    <ListItem button onClick={() => {handleMenuClick('/customers/edit')}}>
+                        <ListItemIcon><GroupAddIcon /></ListItemIcon>
+                        <ListItemText>Editar Cliente</ListItemText>
+                    </ListItem>
                     <ListItem button onClick={() => {handleMenuClick('/rickmorty')}}>
                         <ListItemIcon><AnimationIcon /></ListItemIcon>
                         <ListItemText>Rick and Morty</ListItemText>

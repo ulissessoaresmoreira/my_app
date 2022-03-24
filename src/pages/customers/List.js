@@ -1,6 +1,7 @@
 import React from 'react'
 import {useState, useEffect} from 'react'
 import axios from 'axios'
+import { useHistory } from 'react-router-dom'
 
 
 import CustomerCard from '../../components/CustomerCard'
@@ -21,8 +22,10 @@ const useStyles = makeStyles((theme) => ({
 
 
 const CustomersList = () => {
-    const [customers, setCustomers] = useState([])
     const classes = useStyles()
+    const history = useHistory()
+
+    const [customers, setCustomers] = useState([])    
 
     useEffect(() => {
 
@@ -40,6 +43,10 @@ const handleRemoveCustomer = (id) => {
             const newCustomersState = customers.filter(customer => customer.id !== id)
             setCustomers(newCustomersState)
         })
+}
+
+const handleEditCustomer = (id) => {
+    history.push(`customers/edit/${id}`)
 }
 
 
@@ -60,6 +67,7 @@ const handleRemoveCustomer = (id) => {
                             email = {customer.email}
                             avatar = {customer.avatar}
                             onRemoveCustomer = {handleRemoveCustomer}
+                            onEditCustomer = {handleEditCustomer}
                         />
                     </Grid>                            
                     ))
