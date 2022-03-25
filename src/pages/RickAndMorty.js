@@ -3,13 +3,21 @@ import {useState, useEffect} from 'react'
 import axios from 'axios'
 
 import RickAndMortyCard from '../components/RickAndMortyCard'
+import Grid from '@mui/material/Grid'
+
+import { makeStyles } from '@material-ui/styles'
+
+const useStyles = makeStyles ((theme) => ({
+    card: {
+        margin: 1,
+    }
+}))
 
 
 
 const RickAndMorty = () => {
+    const classes = useStyles
     const [characters, setCharacters] = useState([])
-    
-    
 
     useEffect(() => {
 
@@ -26,19 +34,24 @@ const RickAndMorty = () => {
 
 
     return (
-        <>
+        
+        <Grid container>
+            <Grid item xs={12} style={{background:'lightgrey'}}> 
+            </Grid>
             {
                 characters.map(character => (
-                    <RickAndMortyCard 
-                    name = {character.name}
-                    status = {character.status}
-                    species = {character.species}
-                    location = {character.location}
-                    image = {character.image}
-                    />
+                    <Grid item xs={12} sm={8} md={6} lg={4} className={classes.card}>
+                        <RickAndMortyCard 
+                            name = {character.name}
+                            status = {character.status}
+                            species = {character.species}
+                            location = {character.location}
+                            image = {character.image}
+                        />
+                    </Grid>  
                 ))
             }
-        </>
+        </Grid> 
     )
 }
 

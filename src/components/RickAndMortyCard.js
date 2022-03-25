@@ -18,7 +18,7 @@ import ShareIcon from '@mui/icons-material/Share'
 
 const useStyles = makeStyles ({
     root:{
-        maxWidth: 450,
+        maxWidth: 360,
                 
     }
 })

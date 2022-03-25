@@ -5,6 +5,7 @@ import { makeStyles } from '@material-ui/styles'
 
 import Toasty from '../../components/Toasty'
 import {Button, TextField} from '@mui/material'
+import CircularIntegration from '../../components/CircularIntegration'
 
 
 const useStyles = makeStyles ({
@@ -43,6 +44,7 @@ const Register = () => {
     }
 
     const handleRegisterButton = () => {
+
         let hasError = false
         let newFormState = {   // testar mudar para const e testar tirar o reticencias e colocar {form}
             ...form
@@ -110,7 +112,12 @@ const Register = () => {
                 />
             </div>
             <div className={classes.wrapper}>
-                <Button variant="contained" onClick={handleRegisterButton}>Cadastrar</Button>
+                <Button 
+                    variant="contained" 
+                    onClick={handleRegisterButton}>
+                        Cadastrar                        
+                        <CircularIntegration />
+                </Button>
             </div>
             <Toasty open={openToasty} severity="success" text="Cadastro Realizado com Sucesso!" />
         </>
