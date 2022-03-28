@@ -35,6 +35,7 @@ const CustomersList = () => {
         setCustomers(data)
         console.log(data)
     })
+    
 },[])
 
 const handleRemoveCustomer = (id) => {

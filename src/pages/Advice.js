@@ -11,7 +11,7 @@ import UpdateIcon from '@mui/icons-material/Update';
 
 const Advice = () => {
     const [tips, setTips] = useState([])
-    const [progress, setProgress] = useState(0)
+    //const [progress, setProgress] = useState(0)
 
     useEffect (() =>{
         axios.get('https://api.adviceslip.com/advice')
@@ -19,6 +19,8 @@ const Advice = () => {
                 setTips(response.data.slip.advice)
                 console.log(tips)
             })
+
+            
     }, [tips])
 
     const handleClick = () => {
