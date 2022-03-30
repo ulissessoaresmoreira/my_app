@@ -9,7 +9,8 @@ import {
   blue,
   yellow,
 } 
-from '@material-ui/core/colors/'
+from '@mui/material/colors/'
+
 
 
 const theme = createTheme({
