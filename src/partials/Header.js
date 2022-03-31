@@ -12,8 +12,9 @@ import {
     Toolbar,
     Typography,
     Button,
-    IconButton,    
+    IconButton,        
 } from '@mui/material'
+import LoginIcon from '@mui/icons-material/Login'; 
 
 import MenuIcon from '@mui/icons-material/Menu'
 import HomeIcon from '@mui/icons-material/Home'
@@ -69,6 +70,10 @@ const handleMenuClick = route => {
             </AppBar>
             <Drawer open={menuOpen} onClose={handleToggleMenu}>
                 <List>
+                    <ListItem button onClick={() => {handleMenuClick('/login')}}>
+                        <ListItemIcon><LoginIcon /></ListItemIcon>
+                        <ListItemText>Login</ListItemText>
+                    </ListItem>
                     <ListItem button onClick={() => {handleMenuClick('/')}}>
                         <ListItemIcon><HomeIcon /></ListItemIcon>
                         <ListItemText>Home</ListItemText>

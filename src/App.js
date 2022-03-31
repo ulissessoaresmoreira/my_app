@@ -16,6 +16,7 @@ import Register from './pages/customers/Register'
 import RickAndMorty from './pages/RickAndMorty'
 import Marvel from './pages/Marvel'
 import Advice from './pages/Advice'
+import Login from './pages/Login'
 
 
 const App = () => {
@@ -24,6 +25,9 @@ const App = () => {
       <Router>
         <TemplateDefault> 
           <Switch>            
+            <Route path="/login">
+              <TemplatePage title="Tela de Login" Component={Login} />
+            </Route>
             <Route path="/about">
               <TemplatePage title="Sobre" Component={About} />
             </Route>

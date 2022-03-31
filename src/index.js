@@ -1,6 +1,6 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import { createTheme, ThemeProvider } from '@mui/material/styles';
+import { createTheme, ThemeProvider } from '@mui/material/styles'
 
 import App from './App'
 import './index.css'
@@ -21,7 +21,10 @@ const theme = createTheme({
     secondary: {
       main: yellow[400],
     },
-  },  
+    },
+      margin:{
+        spacing: 1,
+    },  
 })
 
 
