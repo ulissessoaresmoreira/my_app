@@ -1,11 +1,12 @@
 import React from 'react'
 import Typography from '@mui/material/Typography'
 
-const TemplatePage = ({title, Component}) => {
 
+const Clean = ({title, Component}) => {
+    
     return(
         <>
-            <Typography variant="h2" component="div">
+            <Typography variant="h2" component="div" >
                 {title}
             </Typography>
             <Component />
@@ -13,4 +14,4 @@ const TemplatePage = ({title, Component}) => {
     )
 }
 
-export default TemplatePage
+export default Clean

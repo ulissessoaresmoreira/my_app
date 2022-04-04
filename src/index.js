@@ -11,7 +11,7 @@ import {
 } 
 from '@mui/material/colors/'
 
-
+import {AuthProvider} from './state/Auth'
 
 const theme = createTheme({
   palette: {
@@ -31,7 +31,9 @@ const theme = createTheme({
 ReactDOM.render(
   <React.StrictMode>
     <ThemeProvider theme={theme}>
-      <App />
+      <AuthProvider>
+        <App />
+      </AuthProvider>
     </ThemeProvider>
   </React.StrictMode>,
   document.getElementById('root')

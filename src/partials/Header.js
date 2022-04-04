@@ -28,10 +28,8 @@ import useStyles from './Header.style'
 
 import { useHistory } from "react-router-dom"
 
-//import { ClassNames } from '@emotion/react'
 
-
-const Header = () => {
+const Header = ({ user }) => {   // ENVIAR PARA O HEADER SE O USUÁRIO ESTÁ LOGADO (LOGGED) OU NÃO E O EMAIL PARA APARECER QUANDO ESTIVER LOGADO. SE ESTIVER LOGADO VAI APARECER O EMAIL AO INVÉS DE LOGIN E A FOTO, CASO A API RETORNE ISSO. IMPORTAR O USEAUTH NO DEFAULT, POIS É QUEM USA O HEADER E O DEFAULT PRECISA ENXERGAR O STATE ATRAVÉS DO HOOK USEAUTH
     const classes = useStyles()
     const history = useHistory()
 
@@ -65,7 +63,11 @@ const handleMenuClick = route => {
                     <Typography variant="h6" component="div" color="secondary" size="large" sx={{ flexGrow: 1 }}>
                         My App
                     </Typography>                                  
-                    <Button color="primary" size="large">Login</Button>
+                    {
+                        user.logged 
+                        ? <Typography variant="h6" component="div" color="secondary" size="large" sx={{ flexGrow: 1 }}> {user.email} </Typography>
+                        : <Button color="secondary" size="large">Login</Button>
+                    }
                 </Toolbar>
             </AppBar>
             <Drawer open={menuOpen} onClose={handleToggleMenu}>
@@ -109,9 +111,6 @@ const handleMenuClick = route => {
                 </List>
             </Drawer>
         </>
-        
-        
-    
     )
 }
 

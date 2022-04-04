@@ -11,8 +11,7 @@ import CircularIntegration from '../../components/CircularIntegration'
 const useStyles = makeStyles ({
     wrapper:{       
         marginTop: (15),
-        marginBottom: (50),
-        
+        marginBottom: (50),        
     }
 })
 
