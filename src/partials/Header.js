@@ -104,6 +104,10 @@ const handleMenuClick = route => {
                         <ListItemIcon><PsychologyIcon /></ListItemIcon>
                         <ListItemText>Frase do dia</ListItemText>
                     </ListItem>
+                    <ListItem button onClick={() => {handleMenuClick('/translate')}}>
+                        <ListItemIcon></ListItemIcon>
+                        <ListItemText>Fun Translates</ListItemText>
+                    </ListItem>
                     <ListItem button>
                         <ListItemIcon><InfoIcon /></ListItemIcon>
                         <ListItemText>Sobre</ListItemText>

@@ -14,6 +14,7 @@ const Advice = () => {
     useEffect (() =>{
         axios.get('https://api.adviceslip.com/advice')
             .then((response) => {
+                console.log(response)
                 setTips(response.data.slip.advice)
                 console.log(tips)
             })            
@@ -29,7 +30,7 @@ const Advice = () => {
 
     return (
         <>
-            <h1> Advices </h1>
+            <h1> Advices  </h1>
             <AdviceCard 
                 tip = {tips}                    
             />

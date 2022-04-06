@@ -18,6 +18,7 @@ import RickAndMorty from './pages/RickAndMorty'
 import Marvel from './pages/Marvel'
 import Advice from './pages/Advice'
 import Login from './pages/Login'
+import Translate from './pages/Translate'
 
 
 const App = () => {
@@ -32,6 +33,9 @@ const App = () => {
             <Switch> 
               <Route path="/about">
                 <TemplatePage title="Sobre" Component={About} />
+              </Route>
+              <Route path="/translate">
+                <TemplatePage title="Fun Translate" Component={Translate} />
               </Route>
               <Route path="/advice">
                 <TemplatePage title="Ask to Guru" Component={Advice} />
